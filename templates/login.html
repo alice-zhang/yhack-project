@@ -2,12 +2,38 @@
 
 {% block content %}
 
-{% if name %}
-	<h1>Hello {{ name }}</h1>
-{% endif %}
 
-<div class="col-md-4">
-  {{ wtf.quick_form(form) }}
-</div>
+<!--
+<!DOCTYPE html>
+<html>
+-->
+
+<style media="screen" type="text/css">
+     h1,body { font-family:Lato, Lato, sans-serif; color: #ccf2ff; text-align:left; }
+     h1 { font-size: 3.00em; font-style:normal; }
+     body { font-size: 2.00em; font-style:normal; text-align:center; background-color: #FFFFFF; }
+</style>
+
+<h1>Login</h1>
+<!--
+<body>
+	<div style="text-align: center">
+		<div style="box-sizing: border-box; display:inline block; width: 500px; height: 350px; background-color: #ccf2ff; border: 6px solid #FFFFFF; border-radius: 5px; margin: 80px auto auto">
+		<div style="background-color: #ccf2ff; border-radius: 5px 5px 5px 5px;padding: 15px;"><span style="font-family:Lato, Lato, sans-serif; font-style: italic; font-weight:bold; color: #FFFFFF; font-size: 2.50em; ">Login</span>
+		<div style="background-color: #ccf2ff; padding: 15px" id="ap_style">
+		<style type="text/css" scoped>
+		#ap_style td { text-align:right; font-family: Lato, Lato, sans-serif;font-style: italic; color: #FFFFFF; font-size: 1.00em; }
+		#ap_style input,select { border: 2px; box-shadow: 1px 1px 1px; border-radius: 3px 3px 3px 3px; color: #004aa8; display: inline-block; font-size: 0.50em;  padding: 5px; }
+		#ap_style input[type="text"], input[type="password"], select { width: 100%; }
+		#ap_style input[type="button"], #ap_style input[type="reset"], #ap_style input[type="submit"] { height: auto; width: auto; cursor: pointer; float: right; text-align:right; margin-top: 10px; margin-left:10px;}
+		#ap_style table.center { margin-left:auto; margin-right:auto; }
+		</style>
+-->
+
+<body>
+	<div class="col-md-4" style="text-align:left"; >
+  		{{ wtf.quick_form(form) }}
+	</div>
+</body>
 
 {% endblock %}
