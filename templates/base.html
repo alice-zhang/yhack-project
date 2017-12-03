@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 {% endblock %}
 
+
 {% block navbar %}
     <div class="navbar navbar-inverse" role="navigation">
         <div class="container">
@@ -21,11 +22,15 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('ask') }}">Ask</a></li>
+                    <li><a href="{{ url_for('do') }}">Do</a></li>
+                    <li><a href="{{ url_for('me') }}">Me</a></li>
                 </ul>
             </div>
         </div>
     </div>
 {% endblock %}
+
 
 <div class="container">
 {% block content %}

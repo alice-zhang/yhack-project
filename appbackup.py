@@ -2,10 +2,9 @@ from flask import Flask, render_template, url_for, redirect, session
 from flask_bootstrap import Bootstrap
 from flask_mongoengine import MongoEngine 
 from mongoengine import StringField, EmailField
-from 
 
+#from form import LoginForm
 from form import LoginForm
-from form import SignupForm
 #from form import EntryForm
 
 app = Flask(__name__)
@@ -15,9 +14,6 @@ app.config['SECRET_KEY'] = 'SOME_STRING_THATS_SECRET'
 bootstrap = Bootstrap()
 bootstrap.init_app(app)
 
-db = MongoEngine()
-db.init_app(app)
-
 app.config['MONGODB_SETTINGS'] = {
     'db': 'yhack-db',
     'host': 'ds125906.mlab.com',
@@ -25,6 +21,9 @@ app.config['MONGODB_SETTINGS'] = {
     'username': 'admin',
     'password': 'gocolumbia2021'
 }
+
+db = MongoEngine()
+db.init_app(app)
 
 """
 login_manager = LoginManager()
@@ -43,21 +42,21 @@ class User(db.Document):
 	uni = StringField(required=True)
 	password = StringField(required=True)
 	email = EmailField(required=True)
-	phone = String(required=True)
+	phone = StringField(required=True)
 
 @app.route('/')
 def home():
 	return render_template('home.html')
 
-@app.route('/signup', methods=['GET','POST'])
-def signup():
-	form = SignupForm()
+@app.route('/login', methods=['GET','POST'])
+def login():
+	form = LoginForm()
 	if form.validate_on_submit():
 		user = User(name=form.name.data, uni=form.uni.data, password=form.password.data, email=form.email.data, phone=form.phone.data)
 		user.save()
 
-		redirect(url_for('signup')) 
-	return render_template('signup.html', form=form)
+		redirect(url_for('login')) 
+	return render_template('login.html', form=form)
 
 """
 @app.route('/login', methods=['GET','POST'])

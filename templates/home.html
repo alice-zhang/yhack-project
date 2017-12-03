@@ -1,49 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title> LAZIECU PAGE </title>
+	<title> {{ title }} </title>
+	<link href="/static/style.css" type="text/css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
-<style>
-	body {
-		background-color: #9bddff;
-	}
-	h1 {
-		color: blue;
-	}
-</style>
 
 <body>
-	<-- dkfjdkf --> 
-	<h1> Hello Alice </h1>
-	<div>
-		<ul>
-			{% for i in range(10) %}
-			{% if i%2 == 0 %}
-			<li style="color:purple"><b>item {{ i }}</b></li>
-			{% else %}
-			<li>item {{ i }}</li>
-			{% endif %}
-			{% endfor %}
-		</ul>
-		<!-- <ul>
-			{% for key in my_friends %}
-			{% if my_friends[key] > 65 %}
-			<li><b>{{ key }}</b></li>
-			{% else %}
-			<li><i>{{ key }}</i></li>
-			{% endif %}
-			{% endfor %}
-		</ul> -->
+	<div class="header">
+		<img class="logo" src="/static/lazielogo.png">
 	</div>
-	
-	<h1> 2nd header </h1>
-	<p> Just a paragraph. EZ PZ. </p>
-	<form>
-		<label for="Pretty?"> Pretty? </label>
-		<input type="text" name="name" id="name">
+	<div class="main">
+		<div class="buttons">
+			<div class="ask" href=""> ASK </div> <!-- fill in link !!!! -->
+	        <div class="do" href=""> DO </div> <!-- fill in link !!!! -->
+	    </div>
+	</div>
 </body>
-</html>
+
 {% endblock %}

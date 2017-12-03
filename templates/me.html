@@ -1,41 +1,52 @@
-<!-- profile for user --> 
-
 {% extends "base.html" %}
 
 {% block content %}
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title> ADI HOME PAGE </title>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<div class="header">
+      <img src="lazielogo.png">
+    </div>
 </head>
-<style>
-	body {
-		background-color: #9bddff;
-	}
-	h1 {
-		color: blue;
-	}
-</style>
-
 <body>
-	<h1> Hello Alice </h1>
-	<div>
-		<ul>
-			{% for i in range(10) %}
-			{% if i%2 == 0 %}
-			<li style="color:purple"><b>item {{ i }}</b></li>
-			{% else %}
-			<li>item {{ i }}</li>
-			{% endif %}
-			{% endfor %}
-		</ul>
+	<script src="me.js"></script>
+	<link href="mestyle.css" type="text/css" rel="stylesheet">
+	<div class="tab">
+	  <button class="tablinks" onclick="openCity(event, 'London')">My Asks</button>
+	  <button class="tablinks" onclick="openCity(event, 'Paris')">My Do's</button>
 	</div>
-	
-	<h1> 2nd header </h1>
-	<p> Just a paragraph. EZ PZ. </p>
-	<form>
-		<label for="Pretty?"> Pretty? </label>
-		<input type="text" name="name" id="name">
+
+	<div id="London" class="tabcontent">
+	  <h3>My Asks</h3>
+	  <div>
+	  	<ul>
+	  		<!--
+		  	{% for ask_docs in my_asks_list %}
+			<li><b>{{ ask_docs.task }}</b></li>
+			<li>{{ ask_docs.descr }}</li>
+			<li>{{ ask_docs.reward }}</li>
+			{% endfor %} -->
+	  	</ul>
+	</div>
+	</div>
+
+	<div id="Paris" class="tabcontent">
+	  <h3>My Do's</h3>
+	  <div>
+	  	<ul>
+	  		<!--{% for do_docs in my_dos_list %}
+			<li><b>{{ do_docs.task }}</b></li>
+			<li>{{ do_docs.descr }}</li>
+			<li>{{ do_docs.reward }}</li>
+			{% endfor %} -->
+	  	</ul>
+	  </div>
+	</div>
+
 </body>
+
 </html>
+
 {% endblock %}

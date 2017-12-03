@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
-#from wtforms_components import TimeField
+#from wtforms_components import PhoneNumberField
 
 class LoginForm(FlaskForm):
 	name = StringField('Name')
@@ -11,14 +11,13 @@ class LoginForm(FlaskForm):
 	phone = StringField('Phone')
 	submit = SubmitField('Login')
 
-"""
-class DoForm(FlaskForm):
+
+class AskForm(FlaskForm):
 	task = StringField('Task')
-	descr = StringField('Descr')
-	finish_time = TimeField('Finish Time')
-	location = StringField('Location')
+	descr = StringField('Description')
 	reward = StringField('Reward')
-"""
+	submit = SubmitField('Submit')
+
 
 """
 class SignupForm(FlaskForm):
