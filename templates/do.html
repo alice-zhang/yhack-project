@@ -1,5 +1,7 @@
+{% extends "base.html" %}
 
-<!DOCTYPE html>
+{% block content %}
+
 <html>
 <title>Things To Do</title>
 <h1>
@@ -9,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <div class="header" style="height: 300px; margin-top: 80px; margin-bottom: 20px;">
-    <img src="lazielogo.png" style="display: block; margin: 0 auto; width: 170px;">
+    <img src="/static/lazielogo.png" style="display: block; margin: 0 auto; width: 170px;">
   </div>
 </h1>
 <h2>
@@ -47,4 +49,4 @@
 
 </html>
 
-
+{% endblock %}
