@@ -35,14 +35,10 @@ class Ask(db.Document):
 	task = StringField(required=True)
 	descr = StringField(required=True)
 	reward = StringField(required=True)
-	askerid = StringField(required=True)
-	doerid = StringField(required=True)
-	isTaken = BooleanField(required=True)
-	isCompleted = BooleanField(required=True)
-
-@app.route('/')
-def home():
-	return render_template('home.html')
+	askerid = StringField() #why can't required be true??
+	doerid = StringField()
+	isTaken = BooleanField()
+	isCompleted = BooleanField()
 
 @app.route('/login', methods=['GET','POST']) #delete 'GET'
 def login():
@@ -63,44 +59,53 @@ def login():
 		#session['email'] = user.email
 		#session['phone'] = user.phone
 
-		session['userid'] = user._id
+		session['userid'] = str(user['id']) #.str??
 
-		redirect(url_for('login')) 
-	return render_template('login.html', form=form)
+		redirect(url_for('home')) #???
+	return render_template('login.html', form=form, userid=session.get('userid'))
 
+@app.route('/')
+def home():
+	#if they click on one button it redirects to __, otherwise redirects to __
+	return render_template('home.html')
 
 @app.route('/ask', methods=['GET','POST'])
 def ask():
+	task=None
+	descr=None
+	reward=None
+	askerid=None
+	doerid=None
+	isTaken=False
+	isCompleted=False
+
 	form = AskForm()
 	if form.validate_on_submit():
 		ask = Ask(task=form.task.data, descr=form.descr.data, reward=form.reward.data, askerid=session.get('userid'), doerid=None, isTaken=False, isCompleted=False)
 		ask.save()
 
-		redirect(url_for('ask'))
+		redirect(url_for('me'))
 	return render_template('ask.html', form=form)
 
 @app.route('/do', methods=['GET','POST'])
 def do():
-	available_asks = db.ask.find( {'isTaken': False, 'isCompleted': False} );
-	all_asks_list = available_asks.toArray()
-
-	session['all_asks_list'] = all_asks_list
-
-	redirect(url_for('do'))
-	return render_template('do.html', all_asks_list=session.get('all_asks_list'))
+	available_asks = Ask.objects(isTaken =False, isCompleted= False);
+	#all_asks_list = available_asks.toArray()
+	#session['all_asks_list'] = all_asks_list
+	#redirect(url_for('do'))
+	return render_template('do.html', all_asks_list=available_asks)
 
 @app.route('/me', methods=['GET','POST'])
 def me():
-	my_asks = db.ask.find( {'askerid': session.get('userid')} )
-	my_asks_list = my_asks.toArray()
-	session['my_asks_list'] = my_asks_list
-
-	my_dos = db.ask.find( {'doerid': session.get('userid')} )
-	my_dos_list = my_dos.toArray()
-	session['my_dos_list'] = my_dos_list
-
-	redirect(url_for('me'))
-	return render_template('me.html', my_asks_list=session.get('my_asks_list'), my_dos_list=session.get('my_dos_list'))
+	my_asks = Ask.objects(askerid=session.get('userid') )
+	#my_asks_list = my_asks.toArray()
+	#session['my_asks_list'] = my_asks_list
+	
+	my_dos = Ask.objects(doerid=session.get('userid') )
+	#my_dos_list = my_dos.toArray()
+	#session['my_dos_list'] = my_dos_list
+	
+	return render_template('me.html', my_asks_list=my_asks, my_dos_list=my_dos)
 
 if __name__ == "__main__": #main is magic variable
 	app.run() 

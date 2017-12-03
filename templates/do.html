@@ -23,27 +23,28 @@
   </div>
 </h2>
 
-
-
 <body style="background-color: #ffffff; font-family: 'Lato', sans-serif;">
+    {% for ask_doc in all_asks_list %}
+    
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse1">
+                        <b style="margin-left: 3px;">{{ ask_doc.task }}</b> 
+                        <c style="float:right;">{{ ask_doc.reward }}</c>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel-body">{{ ask_doc.descr }}</div>
+                </div>
+             </div>
+        </div>
+    {% endfor %}
 
-  <div class="container">
-    <div class="panel-group">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" href="#collapse1">
-            <b style="margin-left: 3px;">Task</b> 
-            <c style="float:right;">Reward</c>
-            </a>
-          </h4>
-        </div>
-        <div id="collapse1" class="panel-collapse collapse">
-          <div class="panel-body">Description</div>
-        </div>
-      </div>
     </div>
-  </div>
     
 </body>
 
