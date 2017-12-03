@@ -42,7 +42,7 @@ class Ask(db.Document):
 
 @app.route('/')
 def home():
-	return render_template('home.html', title="Lazie at Columbia University")
+	return render_template('home.html')
 
 @app.route('/login', methods=['GET','POST']) #delete 'GET'
 def login():
