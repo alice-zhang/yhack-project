@@ -1,52 +1,50 @@
+
 <!DOCTYPE html>
 <html>
-<head>
-    <style> .indented { padding-left: 100pt; padding-right: 100pt; } </style> 
-    <title>...Things To Do</title>
-    <div style="background:white url(https://res.cloudinary.com/hud9ala09/image/upload/v1472080707/knu63xhr63rieuvss1xj.jpg) repeat fixed;border:1px solid whitek;width:1300px;height:400px;font-size:18px;"></div>
-</head>
+<title>Things To Do</title>
+<h1>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <div class="header" style="height: 300px; margin-top: 80px; margin-bottom: 20px;">
+    <img src="lazielogo.png" style="display: block; margin: 0 auto; width: 170px;">
+  </div>
+</h1>
+<h2>
+  <div class="pagetitle" style="font-family: 'Lato', sans-serif; font-size: 40px; color: #c5ddfc; text-align: center; margin-bottom: 5px;">
+    THINGS TO DO
+  </div>
+  <div class="subtitle" style="font-family: 'Lato', sans-serif; font-size: 25px; color: #c5ddfc; text-align: center; margin-bottom: 50px;">
+    Choose a task.
+  </div>
+</h2>
 
-<body bgcolor="white">
-</br>
-</br>
-<font size="6" color="#ccf2ff" face="lato">
-    <h2 align= center>THINGS TO DO</br>
-      <font size= "3">
-      </br>
-      <div align="center" style="box-sizing; display: inline-block; width: 500px; height: 350px; background-color: #ccf2ff; border: 4px solid #FFFFFF; border-radius: 5px; margin: 0px auto auto">
-         <font size="3" color="white" face="lato">
-         </br>
-     </br>
- </br>
- <label>Choose a task:</label>
-</br>
-<legend>Choose your interests:</legend>
-</div>
-</div>
-</div>
-<div align= "left">
-    <align left>
-        <input type="checkbox" id="Starbucks" name="task" value="Starbucks">
-        <label for="Starbucks">Get a coffee from Starbucks</label>
+
+
+<body style="background-color: #ffffff; font-family: 'Lato', sans-serif;">
+
+  <div class="container">
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse1">
+            <b style="margin-left: 3px;">Task</b> 
+            <c style="float:right;">Reward</c>
+            </a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <div class="panel-body">Description</div>
+        </div>
+      </div>
     </div>
-    <div align= "left">
-        <align left>
-            <input type="checkbox" id="homework" name="task" value="homework">
-            <label for=homework>Drop off math homework</label>
-        </div>
-        <div align= "left">
-            <align left>
-                <input type="checkbox" id="dog" name="task" value="dog">
-                <label for="dog">Walk dog</label>
-            </div>
-        </br>
-        <div>
-            <button type="submit">Confirm</button>
-        </div>
-    </form>
-</style> 
-
-
-<body/>
+  </div>
+    
+</body>
 
 </html>
+
+
