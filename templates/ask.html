@@ -1,13 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Ask</h1>
 
-<body>
-	<div class="col-md-4" style="text-align:left"; >
-  		{{ wtf.quick_form(form) }}
-	</div>
-</body>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<img src="lazielogo.png" alt="Lazie Logo" 
+	style="width:600px;height:600px;margin-top: -150px; margin-left: 335px">
+
+
+
+<h1 style="color:#69b3e7;font-family: 'Lato', sans-serif;font-size: 1.50em;margin-top: -150px;text-align: center;">What do you need?</h1>
+
+<input type ="cash" id="comments" style="width:300px;height:0.3px;background-color:#c5ddfc;border:none;padding:2%;font-size:1.00em;color: #FFFFFF; font-family: 'Lato', sans-serif;margin-left:460px;">
+
+<h2 style="color:#69b3e7;font-family: 'Lato', sans-serif;font-size: 1.50em; margin-top: 50px;text-align: center;">Provide details in point form.</h2>
+
+<p style="color:#69b3e7;font-family:Lato, Lato,sans-serif;font-size: 1.00em; margin-top: -15px; text-align: center;">Location, time, alternate notes if applicable</p>
+
+<input type ="other" id="comments" style="width:300px;height:0.3px;background-color:#c5ddfc;border:none;padding:2%;font-size:1.00em;color: #FFFFFF; font-family: 'Lato', sans-serif;margin-left:460px;">
+
+<h1 style="color:#69b3e7;font-family: 'Lato', sans-serif;text-align:center;font-size: 1.50em; margin: 50px">What are you offering?</h1>
+
+<p style="color:#69b3e7;font-family: 'Lato', sans-serif;font-size: 1.50em; margin-top:50px;text-align: center; font-weight: bold">Cash ($)</p>
+
+<input type ="cash" id="comments" style="width:300px;height:0.3px;background-color:#c5ddfc;border:none;padding:2%;font-size:2.00em;color: #FFFFFF; font-family: 'Lato', sans-serif; margin-left:460px;">
+
+<p style="color:#69b3e7;font-family: 'Lato', sans-serif;font-size: 1.50em; margin-top: 40px;text-align: center; font-weight: bold">Other Method</p>
+
+<input type ="other" id="comments" style="width:300px;height:0.3px;background-color:#c5ddfc;border:none;padding:2%;font-size:2.00em;color: #FFFFFF; font-family: 'Lato', sans-serif;margin-left:460px;">
+
+<br><input type="submit" value="SUBMIT" style="width:70px; height: 40px; margin-left: 600px; margin-top: 40px; margin-bottom: 40px;"></br></html>
 
 {% endblock %}
 
