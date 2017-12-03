@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +15,7 @@
 	<link href="mestyle.css" type="text/css" rel="stylesheet">
 	<div class="tab">
 	  <button class="tablinks" onclick="openCity(event, 'London')">My Asks</button>
-	  <button class="tablinks" onclick="openCity(event, 'Paris')">My Dos</button>
+	  <button class="tablinks" onclick="openCity(event, 'Paris')">My Do's</button>
 	</div>
 
 	<div id="London" class="tabcontent">
@@ -20,10 +24,11 @@
 	</div>
 
 	<div id="Paris" class="tabcontent">
-	  <h3>My Dos</h3>
+	  <h3>My Do's</h3>
 	  <p>Here will be the list of my dos</p> 
 	</div>
 
 </body>
 
 </html>
+{% endblock %}
